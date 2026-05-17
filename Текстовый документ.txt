@@ -1,0 +1,14 @@
+Шаг 1 — запусти XAMPP
+Открой XAMPP Control Panel → нажми Start у Apache и MySQL
+Шаг 2 — backend (терминал 1 в VSCode):
+cd C:\pail-rental\backend-full
+php artisan serve
+Шаг 3 — frontend (терминал 2 в VSCode, нажми +):
+cd C:\pail-rental\frontend
+npm start
+Шаг 4 — открой Chrome → http://localhost:3000
+
+
+
+бд   
+http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=pail_rental&table=users
