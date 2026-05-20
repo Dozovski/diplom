@@ -96,6 +96,10 @@ export default function AuthPage({ onLogin }) {
         <div style={{ marginBottom: 16 }}>
           <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#8b8da0', marginBottom: 6, textTransform: 'uppercase' }}>Номер телефона</label>
           <input
+            type="tel"
+            name="phone"
+            id="phone"
+            autoComplete="tel"
             style={{ width: '100%', padding: '12px 14px', borderRadius: 10, background: '#181920', border: '1px solid #2a2b38', color: '#e8e9f0', fontSize: 15, fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' }}
             placeholder="+375 (29) XXX-XX-XX"
             value={form.phone}
@@ -122,8 +126,10 @@ export default function AuthPage({ onLogin }) {
         )}
 
         <button
+          type="submit"
           onClick={handleSubmit}
           disabled={loading}
+          data-testid="auth-submit"
           style={{
             width: '100%', padding: 14, borderRadius: 12,
             background: 'linear-gradient(135deg,#3b82f6,#06b6d4)',
