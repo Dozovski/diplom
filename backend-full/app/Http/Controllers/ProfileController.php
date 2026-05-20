@@ -15,16 +15,16 @@ class ProfileController extends Controller
     public function update(Request $request): JsonResponse
     {
         $request->validate([
-            'name'       => 'required|string|max:255',
-            'email'      => 'nullable|email',
-            'birth_date' => 'nullable|date',
-            'passport'   => 'nullable|string|max:255',
+            'name'       => 'sometimes|required|string|min:2|max:255',
+            'email'      => 'nullable|email|max:255',
+            'birth_date' => 'nullable|date|before:today',
+            'passport'   => 'nullable|string|max:50',
         ]);
 
         $request->user()->update($request->only([
-            'name', 'email', 'birth_date', 'passport'
+            'name', 'email', 'birth_date', 'passport',
         ]));
 
-        return response()->json($request->user());
+        return response()->json($request->user()->fresh());
     }
 }

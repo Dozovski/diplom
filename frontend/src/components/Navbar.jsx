@@ -57,6 +57,8 @@ export default function Navbar({ pendingCount = 0, user, onLogout }) {
           </span>
           <button
             onClick={onLogout}
+            data-testid="logout-btn"
+            aria-label="Выйти из аккаунта"
             style={{
               padding: '8px 16px', borderRadius: 10, border: '1px solid var(--border)',
               background: 'transparent', color: 'var(--text-secondary)',
